@@ -1,0 +1,35 @@
+<h1 style="text-align: center; color: #333; margin-top: 30px;">Checkout</h1>
+
+<form method="POST" style="
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+">
+    {% csrf_token %}
+    
+    <label for="address" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Delivery Address</label>
+    <textarea name="address" id="address" placeholder="Enter delivery address" rows="5" style="
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        resize: vertical;
+        margin-bottom: 20px;
+    "></textarea>
+
+    <button type="submit" style="
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    ">Place Order</button>
+</form>
