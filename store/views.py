@@ -185,3 +185,18 @@ def decrease_cart_item(request, item_id):
     else:
         item.delete()
     return redirect('cart')
+
+
+
+@login_required
+def my_orders(request):
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+    return render(request, 'store/my_orders.html', {'orders': orders})
+
+
+
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'product_detail.html', {'product': product})

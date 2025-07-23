@@ -174,10 +174,6 @@
         </div>
 
         <div class="quantity-control">
-          <form method="POST" action="{% url 'increase_cart_item' item.id %}">
-            {% csrf_token %}
-            <button type="submit" class="increase-btn">+</button>
-          </form>
 
           <form method="POST" action="{% url 'decrease_cart_item' item.id %}">
             {% csrf_token %}
@@ -185,6 +181,10 @@
           </form>
 
           <span>{{ item.quantity }}</span>
+          <form method="POST" action="{% url 'increase_cart_item' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="increase-btn">+</button>
+          </form>
         </div>
 
         <form method="POST" action="{% url 'remove_from_cart' item.id %}">
